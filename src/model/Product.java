@@ -2,6 +2,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Product implements Subject {
@@ -10,6 +11,7 @@ public class Product implements Subject {
     private final String productName;
     private Double amount;
     private Observer observer;
+    private List<HistoryBid> history = new ArrayList<>();
             
     public Product (String productName , Double amount) {
         this.productName = productName;
@@ -18,7 +20,7 @@ public class Product implements Subject {
     
     @Override
     public void registerObserver (Observer o){
-        System.out.println("Nuevo pujador");
+        System.out.println(o + " se ha unido a la subasta");
         observers.add(o);
     }
 
@@ -40,9 +42,19 @@ public class Product implements Subject {
        if (amount > this.amount){
             this.observer = o;
             this.amount = amount;
-            notify();
+            notifyObserver();
+            history.add(new HistoryBid(new Date(), amount, o));
         }else{
             System.out.println("no supera la puja actual");
+        }
+    }
+    
+    @Override
+    public void getHistory(){
+        for (HistoryBid h : history){
+            System.out.print("\nPujador: " + h.getBidder());
+            System.out.print("Cantidad: " + h.getAmount());
+            System.out.print("fecha: " + h.getDate());
         }
     }
 }

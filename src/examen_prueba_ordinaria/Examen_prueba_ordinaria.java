@@ -6,16 +6,20 @@ import model.*;
 public class Examen_prueba_ordinaria {
 
     public static void main(String[] args) {
-        Subject producto = new Product ("TV LED de 56 pulgadas ", 500.0 );
-        Observer b1 = new Bidder ("ana");
-        Observer b2 = new Bidder ("pablo");
-        Observer b3 = new Bidder ("María");
+        Subject producto = new Product ("patinete electrico ", 500.0 );
+        Observer x1 = new Bidder ("olga");
+        Observer x2 = new Bidder ("pablo");
+
         
-        producto.registerObserver(b1);
-        producto.registerObserver(b2);
-        producto.registerObserver(b3);
+        producto.registerObserver(x1);
+        producto.registerObserver(x2);
+
         
-        producto.setBidAmount(b1, 501.0);
+        producto.setBidAmount(x1, 501.0);
+        producto.setBidAmount(x2, 600.0);
+        producto.setBidAmount(x1, 601.5);
+        
+        producto.getHistory();
     }
     
 }

@@ -16,10 +16,10 @@ public class Bidder implements Observer{
     public Bidder (String bidderName){
         this.bidderName = bidderName;
     }
-    
+
     @Override
     public void update(Observer o, String productName, Double amount) {
-        System. out.println(o + " ha pujado por " + productName + " en " + amount);
+        System. out.println("Hola " + bidderName + ", " + o + " ha pujado por " + productName + " en " + amount);
     }
-   
+    
 }

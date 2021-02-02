@@ -8,5 +8,6 @@ public interface Subject {
     public void removeObserver (Observer o);
     public void notifyObserver();
     public void setBidAmount (Observer o, Double amount);
+    public void getHistory();
   
 }
