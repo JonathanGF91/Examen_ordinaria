@@ -21,5 +21,10 @@ public class Bidder implements Observer{
     public void update(Observer o, String productName, Double amount) {
         System. out.println("Hola " + bidderName + ", " + o + " ha pujado por " + productName + " en " + amount);
     }
+
+    @Override
+    public String getObserverName() {
+           return bidderName;
+    }
     
 }

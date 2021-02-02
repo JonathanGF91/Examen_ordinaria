@@ -26,8 +26,4 @@ public class HistoryBid {
     public Observer getBidder() {
         return bidder;
     }
-    
-    
-    
-    
 }

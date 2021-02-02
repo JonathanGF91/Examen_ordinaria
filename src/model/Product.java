@@ -20,14 +20,14 @@ public class Product implements Subject {
     
     @Override
     public void registerObserver (Observer o){
-        System.out.println(o + " se ha unido a la subasta");
+        System.out.println(o.getObserverName() + " se ha unido a la subasta");
         observers.add(o);
     }
 
     @Override
     public void removeObserver (Observer o){
         observers.remove(o);
-        System.out.println("\n" + observer + " se retira de la puja");
+        System.out.println("\n" + o.getObserverName() + " se retira de la puja");
     }
     @Override
     public void notifyObserver(){

@@ -6,4 +6,5 @@ public interface Observer {
             String productName,
             Double amount);
     
+    public String getObserverName();
 }

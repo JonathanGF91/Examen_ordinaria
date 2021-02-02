@@ -10,16 +10,16 @@ public class Examen_prueba_ordinaria {
         Observer x1 = new Bidder ("olga");
         Observer x2 = new Bidder ("pablo");
 
-        
         producto.registerObserver(x1);
         producto.registerObserver(x2);
-
-        
+  
         producto.setBidAmount(x1, 501.0);
         producto.setBidAmount(x2, 600.0);
         producto.setBidAmount(x1, 601.5);
         
         producto.getHistory();
+        
+        producto.removeObserver(x2);
     }
     
 }
